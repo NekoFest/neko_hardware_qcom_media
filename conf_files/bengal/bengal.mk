@@ -34,11 +34,9 @@ endif
 # Vendor property overrides
 
 ifeq ($(GENERIC_ODM_IMAGE),true)
-  $(warning "Forcing codec2.0 HW for generic odm build variant")
   #Set default ranks and rank Codec 2.0 over OMX codecs
   PRODUCT_ODM_PROPERTIES += debug.stagefright.ccodec=4
   PRODUCT_ODM_PROPERTIES += debug.stagefright.omx_default_rank=1000
 else
-  $(warning "Enabling codec2.0 non-audio SW only for non-generic odm build variant")
   PRODUCT_PROPERTY_OVERRIDES += debug.stagefright.omx_default_rank=0
 endif
